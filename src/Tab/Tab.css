@@ -1,0 +1,53 @@
+.Tab {
+  width: 150px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.Tab ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.Tab ul li {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.Tab ul li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background-color: #ccc;
+}
+
+.Tab ul li.active {
+  background-color: rgb(1 120 210);
+  color: #fff;
+  border-radius: 4px;
+}
+
+.Tab ul li.active::after {
+  display: none;
+}
+
+.Tab ul li.active:not(:first-child) {
+  border-left: 1px solid transparent;
+}
+
+.Tab ul li {
+  margin-left: -1px;
+}
+
+.Tab ul li:first-child {
+  margin-left: 0;
+}
