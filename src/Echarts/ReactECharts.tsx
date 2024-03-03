@@ -53,6 +53,7 @@ export function ReactECharts({
 
     let observer: MutationObserver | false | undefined = false;
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     if (forceResize) observer = forceResizeCharts(resizeChart);
 
     // Return cleanup function
@@ -60,7 +61,7 @@ export function ReactECharts({
       chart?.dispose();
       window.removeEventListener('resize', resizeChart);
     };
-  }, [theme]);
+  }, [forceResize, theme]);
 
   useEffect(() => {
     // Update chart
